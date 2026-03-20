@@ -1,11 +1,9 @@
 const express = require('express');
+const projectsController = require('../controllers/projects.controller');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'List of projects'
-  });
-});
+router.get('/', projectsController.getAllProjects);
+router.get('/:id', projectsController.getProjectById);
 
 module.exports = router;

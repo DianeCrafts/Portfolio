@@ -1,0 +1,46 @@
+[
+  {
+    "id": "experience-1",
+    "role": {
+      "en": "Backend Developer",
+      "fr": "Développeur Backend"
+    },
+    "company": "Example Company",
+    "period": {
+      "start": "2023-01",
+      "end": "2024-06"
+    },
+    "technologies": [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "AWS"
+    ],
+    "description": {
+      "en": "Built APIs and internal tools.",
+      "fr": "Création d'API et d'outils internes."
+    }
+  },
+  {
+    "id": "experience-2",
+    "role": {
+      "en": "Full Stack Developer",
+      "fr": "Développeur Full Stack"
+    },
+    "company": "Another Company",
+    "period": {
+      "start": "2022-01",
+      "end": "2022-12"
+    },
+    "technologies": [
+      "Angular",
+      "Node.js",
+      "Express",
+      "PostgreSQL"
+    ],
+    "description": {
+      "en": "Worked on frontend and backend features.",
+      "fr": "Travail sur des fonctionnalités frontend et backend."
+    }
+  }
+]

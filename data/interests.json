@@ -1,0 +1,16 @@
+[
+  {
+    "id": "interest-1",
+    "name": {
+      "en": "Backend Architecture",
+      "fr": "Architecture Backend"
+    }
+  },
+  {
+    "id": "interest-2",
+    "name": {
+      "en": "Cloud Computing",
+      "fr": "Cloud Computing"
+    }
+  }
+]

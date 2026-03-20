@@ -1,11 +1,8 @@
 const express = require('express');
+const aboutController = require('../controllers/about.controller');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'About data'
-  });
-});
+router.get('/', aboutController.getAbout);
 
 module.exports = router;

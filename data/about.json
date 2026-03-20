@@ -1,0 +1,15 @@
+{
+  "name": "Your Name",
+  "title": {
+    "en": "Software Developer",
+    "fr": "Développeur Logiciel"
+  },
+  "summary": {
+    "en": "I build modern web applications with clean architecture.",
+    "fr": "Je crée des applications web modernes avec une architecture propre."
+  },
+  "location": "Montreal, Canada",
+  "email": "your.email@example.com",
+  "github": "https://github.com/yourusername",
+  "linkedin": "https://linkedin.com/in/yourusername"
+}

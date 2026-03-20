@@ -1,0 +1,28 @@
+[
+  {
+    "id": "project-1",
+    "title": {
+      "en": "Portfolio Website",
+      "fr": "Site Portfolio"
+    },
+    "description": {
+      "en": "Personal portfolio built with Angular and Node.js.",
+      "fr": "Portfolio personnel créé avec Angular et Node.js."
+    },
+    "technologies": ["Angular", "Node.js", "Express", "AWS"],
+    "githubUrl": "https://github.com/yourusername/portfolio-website"
+  },
+  {
+    "id": "project-2",
+    "title": {
+      "en": "Task Manager API",
+      "fr": "API de gestion des tâches"
+    },
+    "description": {
+      "en": "REST API for managing tasks.",
+      "fr": "API REST pour gérer les tâches."
+    },
+    "technologies": ["Node.js", "Express", "JSON"],
+    "githubUrl": "https://github.com/yourusername/task-manager-api"
+  }
+]
