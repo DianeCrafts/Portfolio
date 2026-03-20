@@ -3,6 +3,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 require('dotenv').config();
 
+const indexRoutes = require('./routes/index.routes');
+
 const app = express();
 
 // Middlewares
@@ -14,5 +16,8 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
   res.json({ message: 'API is running' });
 });
+
+// API routes
+app.use('/api', indexRoutes);
 
 module.exports = app;
