@@ -2,7 +2,8 @@ const projectsService = require('../services/projects.service');
 
 function getAllProjects(req, res, next) {
   try {
-    const projects = projectsService.getAllProjects();
+    const { lang } = req.query;
+    const projects = projectsService.getAllProjects(lang);
     res.json(projects);
   } catch (error) {
     next(error);
@@ -12,8 +13,8 @@ function getAllProjects(req, res, next) {
 function getProjectById(req, res, next) {
   try {
     const { id } = req.params;
-
-    const project = projectsService.getProjectById(id);
+    const { lang } = req.query;
+    const project = projectsService.getProjectById(id, lang);
 
     if (!project) {
       return res.status(404).json({

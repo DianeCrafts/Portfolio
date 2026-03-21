@@ -1,13 +1,25 @@
 const jsonRepository = require('../repositories/json.repository');
+const { getLanguage } = require('../utils/locale.util');
+const { translateObject } = require('../utils/translate.util');
 
-function getAllProjects() {
-  return jsonRepository.readJsonFile('projects.json');
-}
+function getAllProjects(langParam) {
+  const lang = getLanguage(langParam);
 
-function getProjectById(id) {
   const projects = jsonRepository.readJsonFile('projects.json');
 
-  return projects.find(project => project.id === id);
+  return translateObject(projects, lang);
+}
+
+function getProjectById(id, langParam) {
+  const lang = getLanguage(langParam);
+
+  const projects = jsonRepository.readJsonFile('projects.json');
+
+  const project = projects.find(p => p.id === id);
+
+  if (!project) return null;
+
+  return translateObject(project, lang);
 }
 
 module.exports = {
