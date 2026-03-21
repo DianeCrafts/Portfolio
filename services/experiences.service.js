@@ -1,13 +1,16 @@
 const jsonRepository = require('../repositories/json.repository');
 const { getLanguage } = require('../utils/locale.util');
 const { translateObject } = require('../utils/translate.util');
+const { sortByStartDateDesc } = require('../utils/sort.util');
 
 function getAllExperiences(langParam) {
   const lang = getLanguage(langParam);
 
   const experiences = jsonRepository.readJsonFile('experiences.json');
 
-  return translateObject(experiences, lang);
+  const sortedExperiences = sortByStartDateDesc(experiences);
+
+  return translateObject(sortedExperiences, lang);
 }
 
 function getExperienceById(id, langParam) {
@@ -15,11 +18,13 @@ function getExperienceById(id, langParam) {
 
   const experiences = jsonRepository.readJsonFile('experiences.json');
 
-  const exp = experiences.find(e => e.id === id);
+  const experience = experiences.find(exp => exp.id === id);
 
-  if (!exp) return null;
+  if (!experience) {
+    return null;
+  }
 
-  return translateObject(exp, lang);
+  return translateObject(experience, lang);
 }
 
 module.exports = {
