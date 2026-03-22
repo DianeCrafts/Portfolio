@@ -157,3 +157,21 @@
     transform: translateX(-50%);
   }
 }
+.timeline-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: var(--color-button);
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-md);
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.timeline-link:hover {
+  background-color: var(--color-button-active);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(254, 127, 45, 0.18);
+}

@@ -1,4 +1,10 @@
-<app-timeline
-  [sectionTitle]="'Projects'"
-  [items]="projectItems"
-></app-timeline>
+@if (isLoading) {
+  <p class="status-text">Loading projects...</p>
+} @else if (errorMessage) {
+  <p class="status-text">{{ errorMessage }}</p>
+} @else {
+  <app-timeline
+    [sectionTitle]="'Projects'"
+    [items]="projectItems"
+  ></app-timeline>
+}

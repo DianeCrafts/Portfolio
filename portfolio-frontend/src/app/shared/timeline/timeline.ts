@@ -8,6 +8,8 @@ export interface TimelineItem {
   period?: string;
   description?: string;
   tags?: string[];
+  linkLabel?: string;
+  linkUrl?: string;
 }
 
 @Component({

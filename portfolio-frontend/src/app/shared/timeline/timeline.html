@@ -33,6 +33,16 @@
             {{ tag }}
           </span>
         </div>
+
+        <a
+          *ngIf="item.linkUrl && item.linkLabel"
+          class="timeline-link"
+          [href]="item.linkUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ item.linkLabel }}
+        </a>
       </div>
 
       <div class="timeline-dot"></div>
