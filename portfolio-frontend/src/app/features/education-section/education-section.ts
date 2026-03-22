@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { Education } from '../../core/models/education.model';
 import { EducationApiService } from '../../core/services/api/education-api.service';
+import { AppLanguage, LanguageService } from '../../core/services/language.service';
+import { UI_TEXT } from '../../core/i18n/ui-text';
 import { Timeline, TimelineItem } from '../../shared/timeline/timeline';
 
 @Component({
@@ -13,13 +15,26 @@ import { Timeline, TimelineItem } from '../../shared/timeline/timeline';
 })
 export class EducationSection implements OnInit {
   private educationApiService = inject(EducationApiService);
+  private languageService = inject(LanguageService);
 
   educationItems: TimelineItem[] = [];
   isLoading = true;
   errorMessage = '';
+  currentLanguage: AppLanguage = 'en';
+  text = UI_TEXT;
 
   ngOnInit(): void {
-    this.educationApiService.getAllEducation('en').subscribe({
+    this.languageService.language$.subscribe((language) => {
+      this.currentLanguage = language;
+      this.loadEducation();
+    });
+  }
+
+  loadEducation(): void {
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    this.educationApiService.getAllEducation(this.currentLanguage).subscribe({
       next: (data) => {
         this.educationItems = data.map((item: Education) => ({
           title: item.degree,
@@ -31,9 +46,8 @@ export class EducationSection implements OnInit {
 
         this.isLoading = false;
       },
-      error: (error) => {
-        console.error('Failed to load education:', error);
-        this.errorMessage = 'Failed to load education.';
+      error: () => {
+        this.errorMessage = this.text[this.currentLanguage].education.error;
         this.isLoading = false;
       }
     });
@@ -45,13 +59,11 @@ export class EducationSection implements OnInit {
 
   private formatMonthYear(value: string): string {
     const [year, month] = value.split('-');
+    const monthNames =
+      this.currentLanguage === 'fr'
+        ? ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc']
+        : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-    const monthNames = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-    ];
-
-    const monthIndex = Number(month) - 1;
-    return `${monthNames[monthIndex]} ${year}`;
+    return `${monthNames[Number(month) - 1]} ${year}`;
   }
 }

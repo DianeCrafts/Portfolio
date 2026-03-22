@@ -1,9 +1,9 @@
 <div class="home-wrapper">
   <div class="hero-content">
-    <p class="greeting">Hi, my name is</p>
+    <p class="greeting">{{ text[currentLanguage].home.greeting }}</p>
     <h1 class="name">Diane</h1>
     <p class="subtitle">
-      Full-stack Developer passionate about building clean, scalable, and modern applications.
+      {{ text[currentLanguage].home.subtitle }}
     </p>
 
     <p class="status-text" *ngIf="isLoading">Loading interests...</p>
@@ -21,7 +21,7 @@
   </div>
 
   <div class="scroll-indicator">
-    <span class="scroll-text">SCROLL</span>
+    <span class="scroll-text">{{ text[currentLanguage].home.scroll }}</span>
     <div class="scroll-arrow">
       <span></span>
     </div>

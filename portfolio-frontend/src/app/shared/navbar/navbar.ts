@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UI_TEXT } from '../../core/i18n/ui-text';
+import { AppLanguage } from '../../core/services/language.service';
+import { AppTheme } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +12,24 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class Navbar {
   @Input() activeSection = 'home';
+  @Input() currentLanguage: AppLanguage = 'en';
+  @Input() currentTheme: AppTheme = 'light';
+
   @Output() sectionChange = new EventEmitter<string>();
+  @Output() languageToggle = new EventEmitter<void>();
+  @Output() themeToggle = new EventEmitter<void>();
+
+  text = UI_TEXT;
 
   setActiveSection(sectionId: string): void {
     this.sectionChange.emit(sectionId);
+  }
+
+  toggleLanguage(): void {
+    this.languageToggle.emit();
+  }
+
+  toggleTheme(): void {
+    this.themeToggle.emit();
   }
 }

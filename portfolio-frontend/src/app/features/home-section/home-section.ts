@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
 import { Interest } from '../../core/models/interest.model';
 import { InterestsApiService } from '../../core/services/api/interests-api.service';
+import { AppLanguage, LanguageService } from '../../core/services/language.service';
+import { UI_TEXT } from '../../core/i18n/ui-text';
 
 @Component({
   selector: 'app-home-section',
@@ -12,20 +14,31 @@ import { InterestsApiService } from '../../core/services/api/interests-api.servi
 })
 export class HomeSection implements OnInit {
   private interestsApiService = inject(InterestsApiService);
+  private languageService = inject(LanguageService);
 
   interests: Interest[] = [];
   isLoading = true;
   errorMessage = '';
+  currentLanguage: AppLanguage = 'en';
+  text = UI_TEXT;
 
   ngOnInit(): void {
-    this.interestsApiService.getAllInterests('en').subscribe({
+    this.languageService.language$.subscribe((language) => {
+      this.currentLanguage = language;
+      this.loadInterests();
+    });
+  }
+
+  loadInterests(): void {
+    this.isLoading = true;
+    this.errorMessage = '';
+
+    this.interestsApiService.getAllInterests(this.currentLanguage).subscribe({
       next: (data) => {
-        console.log('Interests from backend:', data);
         this.interests = data;
         this.isLoading = false;
       },
-      error: (error) => {
-        console.error('Failed to load interests:', error);
+      error: () => {
         this.errorMessage = 'Failed to load interests.';
         this.isLoading = false;
       }

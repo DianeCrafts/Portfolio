@@ -1,10 +1,10 @@
 @if (isLoading) {
-  <p class="status-text">Loading projects...</p>
+  <p class="status-text">{{ text[currentLanguage].projects.loading }}</p>
 } @else if (errorMessage) {
   <p class="status-text">{{ errorMessage }}</p>
 } @else {
   <app-timeline
-    [sectionTitle]="'Projects'"
+    [sectionTitle]="text[currentLanguage].projects.title"
     [items]="projectItems"
   ></app-timeline>
 }

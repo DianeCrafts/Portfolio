@@ -1,6 +1,10 @@
 <app-navbar
   [activeSection]="activeSection"
+  [currentLanguage]="currentLanguage"
+  [currentTheme]="currentTheme"
   (sectionChange)="onSectionChange($event)"
+  (languageToggle)="onLanguageToggle()"
+  (themeToggle)="onThemeToggle()"
 ></app-navbar>
 
 <main class="page-content">
