@@ -1,0 +1,40 @@
+<div class="timeline-section">
+  <div class="timeline-header">
+    <h2>{{ sectionTitle }}</h2>
+  </div>
+
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <div
+      class="timeline-row"
+      *ngFor="let item of items; let i = index"
+      [class.row-left]="i % 2 === 0"
+      [class.row-right]="i % 2 !== 0"
+    >
+      <div class="timeline-card">
+        <h3 class="timeline-card-title">{{ item.title }}</h3>
+
+        <p class="timeline-card-subtitle" *ngIf="item.subtitle">
+          {{ item.subtitle }}
+        </p>
+
+        <p class="timeline-card-period" *ngIf="item.period">
+          {{ item.period }}
+        </p>
+
+        <p class="timeline-card-description" *ngIf="item.description">
+          {{ item.description }}
+        </p>
+
+        <div class="timeline-tags" *ngIf="item.tags?.length">
+          <span class="timeline-tag" *ngFor="let tag of item.tags">
+            {{ tag }}
+          </span>
+        </div>
+      </div>
+
+      <div class="timeline-dot"></div>
+    </div>
+  </div>
+</div>
