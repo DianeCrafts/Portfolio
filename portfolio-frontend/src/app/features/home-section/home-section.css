@@ -1,39 +1,212 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
 .home-wrapper {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
+  min-height: calc(100vh - 7rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   text-align: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease forwards;
 }
 
 .greeting {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  opacity: 0.9;
+  letter-spacing: 0.04em;
 }
 
 .name {
-  font-size: 4rem;
+  font-size: clamp(3rem, 8vw, 5.5rem);
   margin: 0;
   color: var(--color-text);
+  line-height: 1;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  max-width: 920px;
+  margin: 1.5rem auto 3rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text);
 }
 
 .interests-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .interest-box {
   background-color: var(--color-bg);
   color: var(--color-text);
   border: 2px solid var(--color-border);
-  padding: 1rem 1.25rem;
-  border-radius: var(--radius-md);
-  min-width: 180px;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius-lg);
+  min-width: 190px;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(35, 61, 77, 0.08);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    background-color 0.35s ease;
+  animation: floatBox 4.5s ease-in-out infinite;
+}
+
+.interest-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  background-color: var(--color-button-active);
+  color: #ffffff;
+  border-color: var(--color-button-active);
+  box-shadow: 0 14px 28px rgba(254, 127, 45, 0.2);
+}
+
+.interest-box-1 {
+  animation-delay: 0s;
+}
+
+.interest-box-2 {
+  animation-delay: 1s;
+}
+
+.interest-box-3 {
+  animation-delay: 2s;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.scroll-text {
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  position: relative;
+  width: 32px;
+  height: 48px;
+}
+
+.scroll-arrow::before,
+.scroll-arrow::after,
+.scroll-arrow span {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-right: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  transform: translateX(-50%) rotate(45deg);
+  opacity: 0;
+  animation: arrowCascade 1.8s infinite;
+}
+
+.scroll-arrow::before {
+  top: 0;
+  animation-delay: 0s;
+}
+
+.scroll-arrow span {
+  top: 10px;
+  animation-delay: 0.2s;
+}
+
+.scroll-arrow::after {
+  top: 20px;
+  animation-delay: 0.4s;
+}
+
+@keyframes floatBox {
+  0% {
+    transform: translateY(0px);
+    border-color: var(--color-border);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(0px);
+    border-color: var(--color-button);
+  }
+  75% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+    border-color: var(--color-border);
+  }
+}
+
+@keyframes arrowCascade {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-6px) rotate(45deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(6px) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(16px) rotate(45deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .interest-box {
+    min-width: 100%;
+    max-width: 320px;
+  }
+
+  .scroll-indicator {
+    bottom: 2.5rem;
+  }
 }

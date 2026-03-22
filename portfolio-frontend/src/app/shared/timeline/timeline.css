@@ -1,7 +1,8 @@
 .timeline-section {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1400px;   
   margin: 0 auto;
+  padding: 0 2rem;    
 }
 
 .timeline-header {
@@ -39,20 +40,18 @@
 
   opacity: 0;
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity 1.5s ease,
+    transform 1.5s ease;
 }
 
 .timeline-row.row-left {
   justify-content: flex-start;
-  padding-right: 50%;
-  transform: translateX(-50px);
+  padding-right: 52%;
 }
 
 .timeline-row.row-right {
   justify-content: flex-end;
-  padding-left: 50%;
-  transform: translateX(50px);
+  padding-left: 52%;
 }
 
 .timeline-row.is-visible {
@@ -61,15 +60,16 @@
 }
 
 .timeline-card {
-  width: calc(50% - 3rem);
+  width: calc(80% - 2rem);
+  max-width: 600px;
   background-color: var(--color-bg);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
   color: var(--color-text);
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 1.5s ease,
+    box-shadow 1.5s ease;
 }
 
 .timeline-card:hover {
