@@ -1,16 +1,133 @@
-.section-box {
+:host {
+  display: block;
   width: 100%;
-  max-width: 2000px;
+}
+
+.contact-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.status-text {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.contact-card {
   background-color: var(--color-bg);
   border: 2px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
+  border-radius: 28px;
+  padding: 3rem 2rem;
+  box-shadow: 0 14px 35px rgba(35, 61, 77, 0.08);
+  position: relative;
+  overflow: hidden;
 }
 
-h2 {
-  margin-top: 0;
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid rgba(35, 61, 77, 0.12);
 }
 
-.contact-list {
-  margin-top: 1.5rem;
+.contact-card::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;
+  left: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(254, 127, 45, 0.18);
+}
+
+.contact-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-label {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-button-active);
+}
+
+.contact-header h2 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: var(--color-text);
+}
+
+.contact-subtitle {
+  max-width: 650px;
+  margin: 1rem auto 0;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.contact-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.4rem;
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-6px);
+  background-color: var(--color-button);
+  color: #ffffff;
+  border-color: var(--color-button);
+  box-shadow: 0 14px 28px rgba(33, 94, 97, 0.18);
+}
+
+.contact-item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-item-value {
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 2.25rem 1.5rem;
+  }
 }
