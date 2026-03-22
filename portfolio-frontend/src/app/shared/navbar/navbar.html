@@ -1,10 +1,47 @@
 <nav class="navbar">
   <div class="navbar-container">
-    <a class="nav-button active" href="#home">Home</a>
-    <a class="nav-button" href="#experience">Experience</a>
-    <a class="nav-button" href="#projects">Projects</a>
-    <a class="nav-button" href="#education">Education</a>
-    <a class="nav-button" href="#about">About</a>
-    <a class="nav-button" href="assets/resume.pdf" download>Resume</a>
+    <a
+      class="nav-button"
+      [class.active]="activeSection === 'home'"
+      href="#home"
+    >
+      Home
+    </a>
+
+    <a
+      class="nav-button"
+      [class.active]="activeSection === 'experience'"
+      href="#experience"
+    >
+      Experience
+    </a>
+
+    <a
+      class="nav-button"
+      [class.active]="activeSection === 'projects'"
+      href="#projects"
+    >
+      Projects
+    </a>
+
+    <a
+      class="nav-button"
+      [class.active]="activeSection === 'education'"
+      href="#education"
+    >
+      Education
+    </a>
+
+    <a
+      class="nav-button"
+      [class.active]="activeSection === 'about'"
+      href="#about"
+    >
+      About
+    </a>
+
+    <a class="nav-button" href="assets/resume.pdf" download>
+      Resume
+    </a>
   </div>
 </nav>

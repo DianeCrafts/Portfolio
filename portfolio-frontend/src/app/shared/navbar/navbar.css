@@ -12,9 +12,8 @@
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1rem 1.5rem;
-
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
@@ -25,7 +24,10 @@
   color: #ffffff;
   padding: 0.7rem 1rem;
   border-radius: var(--radius-md);
-  transition: transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .nav-button:hover {
@@ -34,4 +36,5 @@
 
 .nav-button.active {
   background-color: var(--color-button-active);
+  box-shadow: 0 8px 18px rgba(254, 127, 45, 0.25);
 }

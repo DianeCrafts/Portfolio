@@ -11,6 +11,7 @@
       *ngFor="let item of items; let i = index"
       [class.row-left]="i % 2 === 0"
       [class.row-right]="i % 2 !== 0"
+      appRevealOnScroll
     >
       <div class="timeline-card">
         <h3 class="timeline-card-title">{{ item.title }}</h3>
