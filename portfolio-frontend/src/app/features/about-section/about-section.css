@@ -1,0 +1,16 @@
+.section-box {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.contact-list {
+  margin-top: 1.5rem;
+}

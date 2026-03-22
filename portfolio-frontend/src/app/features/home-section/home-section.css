@@ -1,0 +1,39 @@
+.home-wrapper {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.greeting {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 4rem;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.interest-box {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  min-width: 180px;
+  font-weight: 600;
+}

@@ -1,0 +1,11 @@
+.page-content {
+  background-color: var(--color-bg);
+}
+
+.page-section {
+  min-height: 100vh;
+  padding: 7rem 2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
