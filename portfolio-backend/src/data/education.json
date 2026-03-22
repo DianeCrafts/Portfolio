@@ -1,0 +1,45 @@
+[
+  {
+    "id": "education-1",
+    "degree": {
+      "en": "Bachelor of Computer Science",
+      "fr": "Baccalauréat en informatique"
+    },
+    "school": "University Name",
+    "period": {
+      "start": "2020-09",
+      "end": "2024-06"
+    },
+    "description": {
+      "en": "Focused on software development, algorithms, backend systems, and web technologies.",
+      "fr": "Axé sur le développement logiciel, les algorithmes, les systèmes backend et les technologies web."
+    },
+    "courses": [
+      "Algorithms",
+      "Databases",
+      "Web Development",
+      "Operating Systems"
+    ]
+  },
+  {
+    "id": "education-2",
+    "degree": {
+      "en": "Relevant Coursework",
+      "fr": "Cours pertinents"
+    },
+    "school": "Academic Projects",
+    "period": {
+      "start": "2021-01",
+      "end": "2023-12"
+    },
+    "description": {
+      "en": "Completed projects in full-stack development, networking, and software engineering.",
+      "fr": "Réalisation de projets en développement full-stack, réseautique et ingénierie logicielle."
+    },
+    "courses": [
+      "Networking",
+      "Software Engineering",
+      "Cloud Fundamentals"
+    ]
+  }
+]
