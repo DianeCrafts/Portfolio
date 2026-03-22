@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 import { Navbar } from './shared/navbar/navbar';
 import { HomeSection } from './features/home-section/home-section';
@@ -21,41 +21,33 @@ import { AboutSection } from './features/about-section/about-section';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class AppComponent implements AfterViewInit, OnDestroy {
-  title = 'portfolio-frontend';
+export class AppComponent {
   activeSection = 'home';
 
-  private observer?: IntersectionObserver;
-
-  ngAfterViewInit(): void {
-    const sections = document.querySelectorAll('section[id]');
-
-    this.observer = new IntersectionObserver(
-      (entries) => {
-        let visibleSection: string | null = null;
-        let maxRatio = 0;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            visibleSection = entry.target.id;
-          }
-        });
-
-        if (visibleSection) {
-          this.activeSection = visibleSection;
-        }
-      },
-      {
-        threshold: [0.2, 0.35, 0.5, 0.65],
-        rootMargin: '-20% 0px -20% 0px'
-      }
-    );
-
-    sections.forEach((section) => this.observer?.observe(section));
+  onSectionChange(sectionId: string): void {
+    this.activeSection = sectionId;
   }
 
-  ngOnDestroy(): void {
-    this.observer?.disconnect();
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    const sections = ['home', 'experience', 'projects', 'education', 'about'];
+
+    const navbarOffset = 120;
+
+    for (const sectionId of sections) {
+      const element = document.getElementById(sectionId);
+
+      if (!element) {
+        continue;
+      }
+
+      const top = element.offsetTop - navbarOffset;
+      const bottom = top + element.offsetHeight;
+
+      if (window.scrollY >= top && window.scrollY < bottom) {
+        this.activeSection = sectionId;
+        break;
+      }
+    }
   }
 }

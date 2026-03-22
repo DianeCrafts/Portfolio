@@ -1,4 +1,8 @@
-<app-navbar></app-navbar>
+<app-navbar
+  [activeSection]="activeSection"
+  (sectionChange)="onSectionChange($event)"
+></app-navbar>
+
 <main class="page-content">
   <section id="home" class="page-section">
     <app-home-section></app-home-section>

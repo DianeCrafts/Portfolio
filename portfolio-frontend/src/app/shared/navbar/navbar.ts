@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,4 +9,9 @@ import { Component, Input } from '@angular/core';
 })
 export class Navbar {
   @Input() activeSection = 'home';
+  @Output() sectionChange = new EventEmitter<string>();
+
+  setActiveSection(sectionId: string): void {
+    this.sectionChange.emit(sectionId);
+  }
 }

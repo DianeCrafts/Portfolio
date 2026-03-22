@@ -4,6 +4,7 @@
       class="nav-button"
       [class.active]="activeSection === 'home'"
       href="#home"
+      (click)="setActiveSection('home')"
     >
       Home
     </a>
@@ -12,6 +13,7 @@
       class="nav-button"
       [class.active]="activeSection === 'experience'"
       href="#experience"
+      (click)="setActiveSection('experience')"
     >
       Experience
     </a>
@@ -20,6 +22,7 @@
       class="nav-button"
       [class.active]="activeSection === 'projects'"
       href="#projects"
+      (click)="setActiveSection('projects')"
     >
       Projects
     </a>
@@ -28,6 +31,7 @@
       class="nav-button"
       [class.active]="activeSection === 'education'"
       href="#education"
+      (click)="setActiveSection('education')"
     >
       Education
     </a>
@@ -36,6 +40,7 @@
       class="nav-button"
       [class.active]="activeSection === 'about'"
       href="#about"
+      (click)="setActiveSection('about')"
     >
       About
     </a>
