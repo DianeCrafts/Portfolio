@@ -184,6 +184,12 @@
   }
 }
 
+.status-text {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-top: 1rem;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

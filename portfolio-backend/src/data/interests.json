@@ -12,5 +12,12 @@
       "en": "Cloud Computing",
       "fr": "Cloud Computing"
     }
+  },
+  {
+  "id": "interest-3",
+  "name": {
+    "en": "System Design",
+    "fr": "Conception de Systèmes"
   }
+}
 ]

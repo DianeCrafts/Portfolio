@@ -6,10 +6,17 @@
       Full-stack Developer passionate about building clean, scalable, and modern applications.
     </p>
 
-    <div class="interests-container">
-      <div class="interest-box interest-box-1">Backend Development</div>
-      <div class="interest-box interest-box-2">Cloud Computing</div>
-      <div class="interest-box interest-box-3">System Design</div>
+    <p class="status-text" *ngIf="isLoading">Loading interests...</p>
+    <p class="status-text" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <div class="interests-container" *ngIf="!isLoading && !errorMessage">
+      <div
+        *ngFor="let interest of interests; let i = index"
+        class="interest-box"
+        [ngClass]="getInterestBoxClass(i)"
+      >
+        {{ interest.name }}
+      </div>
     </div>
   </div>
 
