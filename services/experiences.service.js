@@ -3,20 +3,17 @@ const { getLanguage } = require('../utils/locale.util');
 const { translateObject } = require('../utils/translate.util');
 const { sortByStartDateDesc } = require('../utils/sort.util');
 
-function getAllExperiences(langParam) {
+async function getAllExperiences(langParam) {
   const lang = getLanguage(langParam);
-
-  const experiences = jsonRepository.readJsonFile('experiences.json');
-
+  const experiences = await jsonRepository.readJsonFile('experiences.json');
   const sortedExperiences = sortByStartDateDesc(experiences);
 
   return translateObject(sortedExperiences, lang);
 }
 
-function getExperienceById(id, langParam) {
+async function getExperienceById(id, langParam) {
   const lang = getLanguage(langParam);
-
-  const experiences = jsonRepository.readJsonFile('experiences.json');
+  const experiences = await jsonRepository.readJsonFile('experiences.json');
 
   const experience = experiences.find(exp => exp.id === id);
 

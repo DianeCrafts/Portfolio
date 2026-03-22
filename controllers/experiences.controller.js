@@ -1,20 +1,19 @@
 const experiencesService = require('../services/experiences.service');
 
-function getAllExperiences(req, res, next) {
+async function getAllExperiences(req, res, next) {
   try {
-    const { lang } = req.query;
-    const experiences = experiencesService.getAllExperiences(lang);
+    const experiences = await experiencesService.getAllExperiences(req.query.lang);
     res.json(experiences);
   } catch (error) {
     next(error);
   }
 }
 
-function getExperienceById(req, res, next) {
+async function getExperienceById(req, res, next) {
   try {
     const { id } = req.params;
-    const { lang } = req.query;
-    const experience = experiencesService.getExperienceById(id, lang);
+
+    const experience = await experiencesService.getExperienceById(id, req.query.lang);
 
     if (!experience) {
       return res.status(404).json({

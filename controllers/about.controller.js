@@ -1,9 +1,8 @@
 const aboutService = require('../services/about.service');
 
-function getAbout(req, res, next) {
+async function getAbout(req, res, next) {
   try {
-    const { lang } = req.query;
-    const about = aboutService.getAbout(lang);
+    const about = await aboutService.getAbout(req.query.lang);
     res.json(about);
   } catch (error) {
     next(error);
