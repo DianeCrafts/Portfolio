@@ -20,9 +20,11 @@ export class Navbar {
   @Output() themeToggle = new EventEmitter<void>();
 
   text = UI_TEXT;
+  isMenuOpen = false;
 
   setActiveSection(sectionId: string): void {
     this.sectionChange.emit(sectionId);
+    this.isMenuOpen = false;
   }
 
   toggleLanguage(): void {
@@ -31,5 +33,13 @@ export class Navbar {
 
   toggleTheme(): void {
     this.themeToggle.emit();
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 }
