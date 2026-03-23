@@ -155,61 +155,82 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(254, 127, 45, 0.18);
 }
-
 @media (max-width: 768px) {
+  .timeline-section {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .timeline-wrapper {
+    padding: 0;
+  }
+
   .timeline-line {
-    left: 1rem;
-    transform: none;
-  }
-
-  .timeline-row {
-    justify-content: flex-start !important;
-    transform: translateY(30px);
-  }
-
-  .timeline-row.row-left .timeline-card,
-  .timeline-row.row-right .timeline-card {
-    width: 100%;
-    margin-left: 2.5rem;
-    margin-right: 0;
-  }
-
-  .timeline-row.is-visible {
-    transform: translateY(0);
+    display: none;
   }
 
   .timeline-dot {
-    left: 1rem;
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 768px) {
-
-  .timeline-line {
     display: none;
   }
 
   .timeline-row {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    justify-content: stretch !important;
+    margin-bottom: 1.5rem;
+    padding: 0 !important;
+
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
   }
 
-  .timeline-item {
-    width: 100%;
-    max-width: 100%;
+  .timeline-row.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .timeline-item.left,
-  .timeline-item.right {
-    justify-content: center;
+  .timeline-row.row-left,
+  .timeline-row.row-right {
+    justify-content: stretch !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  .timeline-content {
-    width: 100%;
+  .timeline-card {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 1.4rem;
+    box-sizing: border-box;
   }
 
-  .timeline-dot {
-    display: none;
+  .timeline-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .timeline-period {
+    font-size: 0.85rem;
+  }
+
+  .timeline-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .timeline-tags {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .timeline-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.55rem;
   }
 }
