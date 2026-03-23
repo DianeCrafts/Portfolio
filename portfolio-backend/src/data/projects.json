@@ -1,28 +1,92 @@
 [
-  {
-    "id": "project-1",
+    {
+    "id": "project-portfolio",
     "title": {
-      "en": "Portfolio Website",
-      "fr": "Site Portfolio"
+      "en": "Full-Stack Portfolio Platform",
+      "fr": "Plateforme Portfolio Full-Stack"
     },
     "description": {
-      "en": "Personal portfolio built with Angular and Node.js.",
-      "fr": "Portfolio personnel créé avec Angular et Node.js."
+      "en": "Developed a full-stack portfolio using Angular and Node.js with dynamic API-driven content, multilingual support (EN/FR), and light/dark theming. Improved backend performance by up to 30% throughput and 22% lower latency using in-memory caching, and enhanced scalability by refactoring synchronous file operations to asynchronous I/O. Designed a modular backend architecture and prepared deployment using Docker, CI/CD pipelines, and AWS.",
+      "fr": "Développé un portfolio full-stack avec Angular et Node.js avec du contenu dynamique via API, support multilingue (EN/FR) et mode clair/sombre. Amélioration des performances backend jusqu’à 30% de débit et 22% de réduction de latence grâce au caching en mémoire, et amélioration de la scalabilité via des opérations I/O asynchrones. Conception d’une architecture backend modulaire et préparation du déploiement avec Docker, CI/CD et AWS."
     },
-    "technologies": ["Angular", "Node.js", "Express", "AWS"],
-    "githubUrl": "https://github.com/yourusername/portfolio-website"
+    "technologies": [
+      "Angular",
+      "Node.js",
+      "Express",
+      "TypeScript",
+      "CSS",
+      "Docker",
+      "GitHub Actions",
+      "AWS EC2"
+    ],
+    "githubUrl": "https://github.com/DianeCrafts/Portfolio"
   },
   {
-    "id": "project-2",
+    "id": "project-skillmatch",
     "title": {
-      "en": "Task Manager API",
-      "fr": "API de gestion des tâches"
+      "en": "skillmatch: AI-Powered Job Matching Platform",
+      "fr": "skillmatch: Plateforme de Matching d'Emplois avec IA"
     },
     "description": {
-      "en": "REST API for managing tasks.",
-      "fr": "API REST pour gérer les tâches."
+      "en": "Developed a full-stack microservices platform using Spring Boot and FastAPI to deliver AI-driven job matching. Built LLM-powered resume parsing and semantic job recommendations using embeddings and vector search. Reduced search latency by 3× compared to non-indexed search and achieved ~20% faster performance than PostgreSQL full-text search by integrating Elasticsearch. Implemented secure JWT-based authentication with RBAC and containerized all services using Docker for scalable orchestration.",
+      "fr": "Développé une plateforme full-stack en microservices avec Spring Boot et FastAPI pour le matching d’emplois basé sur l’IA. Implémentation du parsing de CV avec LLM et des recommandations d’emplois via embeddings et recherche vectorielle. Réduction de la latence de recherche par 3× par rapport à une recherche non indexée et ~20% plus rapide que la recherche full-text PostgreSQL grâce à Elasticsearch. Mise en place d’une authentification sécurisée avec JWT et RBAC et conteneurisation avec Docker."
     },
-    "technologies": ["Node.js", "Express", "JSON"],
-    "githubUrl": "https://github.com/yourusername/task-manager-api"
-  }
+    "technologies": [
+      "Spring Boot",
+      "Java",
+      "FastAPI",
+      "Python",
+      "Elasticsearch",
+      "PostgreSQL",
+      "Docker",
+      "Docker Compose",
+      "JWT",
+      "LLM (Phi-3)",
+      "SentenceTransformers"
+    ],
+    "githubUrl": "https://github.com/DianeCrafts/skillMatch"
+  },
+  {
+  "id": "project-earnbreak",
+  "title": {
+    "en": "Earnbreak: Adaptive Focus-Based Productivity System",
+    "fr": "Earnbreak: Système de Productivité Adaptatif Basé sur la Concentration"
+  },
+  "description": {
+    "en": "Developed an AI-driven productivity system that dynamically adjusts time flow based on user focus behavior instead of fixed timers. Built a machine learning model (Random Forest) achieving ~96% accuracy in classifying focus states (focused, distracted, idle, neutral) using behavioral signals such as app usage, gaze, and interaction patterns. Designed a real-time pipeline with FastAPI and WebSockets to stream predictions and adapt user experience instantly, improving productivity feedback from time-based to behavior-based.",
+    "fr": "Développé un système de productivité basé sur l’IA qui ajuste dynamiquement le temps en fonction du niveau de concentration de l’utilisateur, au lieu de timers fixes. Création d’un modèle de machine learning (Random Forest) atteignant ~96% de précision pour classifier les états de concentration (focus, distraction, inactif, neutre) à partir de signaux comportementaux (usage des applications, regard, interactions). Mise en place d’un pipeline temps réel avec FastAPI et WebSockets pour adapter l’expérience utilisateur instantanément."
+  },
+  "technologies": [
+    "FastAPI",
+    "Python",
+    "Machine Learning",
+    "Random Forest",
+    "WebSockets",
+    "Vue.js",
+    "Tauri",
+    "OpenCV"
+  ],
+  "githubUrl": "https://github.com/DianeCrafts/EarnBreak"
+},
+{
+  "id": "project-billing-distributed",
+  "title": {
+    "en": "Distributed Billing System with Cron Scheduler",
+    "fr": "Système de Facturation Distribué avec Ordonnanceur Cron"
+  },
+  "description": {
+    "en": "Engineered a distributed billing system leveraging a reusable cron scheduler to guarantee exactly-once job execution across multiple nodes. Designed a fault-tolerant architecture with leader election, persistent job storage as a single source of truth, and worker-based processing to prevent duplicate charges and missed payments. Implemented crash recovery, horizontal scalability, and real-time monitoring, simulating production-grade background job systems used in large-scale services.",
+    "fr": "Conception d’un système de facturation distribué utilisant un ordonnanceur cron réutilisable pour garantir une exécution unique des tâches sur plusieurs nœuds. Architecture tolérante aux pannes avec élection de leader, stockage persistant comme source de vérité et traitement par workers pour éviter les doublons et les paiements manqués. Implémentation de la reprise après panne, de la scalabilité horizontale et du monitoring en temps réel."
+  },
+  "technologies": [
+    "Python",
+    "Distributed Systems",
+    "Cron Scheduler",
+    "SQL",
+    "Concurrency",
+    "Leader Election",
+    "Worker Queues"
+  ],
+  "githubUrl": "https://github.com/DianeCrafts/Billing-service"
+}
 ]

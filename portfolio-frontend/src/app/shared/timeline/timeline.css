@@ -1,8 +1,8 @@
 .timeline-section {
   width: 100%;
-  max-width: 1400px;   
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;    
+  padding: 0 2rem;
 }
 
 .timeline-header {
@@ -37,7 +37,6 @@
   width: 100%;
   display: flex;
   margin-bottom: 2.5rem;
-
   opacity: 0;
   transition:
     opacity 1.5s ease,
@@ -46,12 +45,10 @@
 
 .timeline-row.row-left {
   justify-content: flex-start;
-  padding-right: 52%;
 }
 
 .timeline-row.row-right {
   justify-content: flex-end;
-  padding-left: 52%;
 }
 
 .timeline-row.is-visible {
@@ -60,8 +57,7 @@
 }
 
 .timeline-card {
-  width: calc(80% - 2rem);
-  max-width: 600px;
+  width: min(600px, calc(50% - 3rem));
   background-color: var(--color-bg);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
@@ -70,6 +66,15 @@
   transition:
     transform 1.5s ease,
     box-shadow 1.5s ease;
+  box-sizing: border-box;
+}
+
+.timeline-row.row-left .timeline-card {
+  margin-right: calc(50% - 1rem);
+}
+
+.timeline-row.row-right .timeline-card {
+  margin-left: calc(50% - 1rem);
 }
 
 .timeline-card:hover {
@@ -110,6 +115,7 @@
   transition:
     transform 0.4s ease,
     box-shadow 0.4s ease;
+  z-index: 2;
 }
 
 .timeline-row.is-visible .timeline-dot {
@@ -131,32 +137,6 @@
   background-color: var(--color-bg);
 }
 
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 1rem;
-    transform: none;
-  }
-
-  .timeline-row {
-    justify-content: flex-start !important;
-    padding-left: 2.5rem !important;
-    padding-right: 0 !important;
-    transform: translateY(30px);
-  }
-
-  .timeline-row.is-visible {
-    transform: translateY(0);
-  }
-
-  .timeline-card {
-    width: 100%;
-  }
-
-  .timeline-dot {
-    left: 1rem;
-    transform: translateX(-50%);
-  }
-}
 .timeline-link {
   display: inline-block;
   margin-top: 1rem;
@@ -174,4 +154,32 @@
   background-color: var(--color-button-active);
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(254, 127, 45, 0.18);
+}
+
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 1rem;
+    transform: none;
+  }
+
+  .timeline-row {
+    justify-content: flex-start !important;
+    transform: translateY(30px);
+  }
+
+  .timeline-row.row-left .timeline-card,
+  .timeline-row.row-right .timeline-card {
+    width: 100%;
+    margin-left: 2.5rem;
+    margin-right: 0;
+  }
+
+  .timeline-row.is-visible {
+    transform: translateY(0);
+  }
+
+  .timeline-dot {
+    left: 1rem;
+    transform: translateX(-50%);
+  }
 }

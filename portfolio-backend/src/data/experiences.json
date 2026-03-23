@@ -2,45 +2,77 @@
   {
     "id": "experience-1",
     "role": {
-      "en": "Backend Developer",
-      "fr": "Développeur Backend"
+      "en": "Full-Stack Software Developer Intern (Finance project)",
+      "fr": "Stagiaire Développeur Full-Stack (Projet Finance)"
     },
-    "company": "Example Company",
+    "company": "Nakisa",
     "period": {
-      "start": "2023-01",
-      "end": "2024-06"
+      "start": "2025-07",
+      "end": "2025-11"
     },
     "technologies": [
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "AWS"
+      "Java",
+      "Spring Boot",
+      "OpenAPI",
+      "Vue.js",
+      "Swagger",
+      "Jira",
+      "Git"
     ],
     "description": {
-      "en": "Built APIs and internal tools.",
-      "fr": "Création d'API et d'outils internes."
+      "en": "Built a centralized multilingual OpenAPI configuration for Spring Boot microservices, standardized Vue.js components, developed end-to-end load tests for 150+ REST endpoints, and contributed to Agile workflows using Jira and Git.",
+      "fr": "Création d’une configuration OpenAPI multilingue centralisée pour des microservices Spring Boot, standardisation des composants Vue.js, développement de tests de charge de bout en bout pour plus de 150 endpoints REST et contribution aux workflows Agile avec Jira et Git."
     }
   },
   {
     "id": "experience-2",
     "role": {
-      "en": "Full Stack Developer",
-      "fr": "Développeur Full Stack"
+      "en": "Research Assistant",
+      "fr": "Assistant de recherche"
     },
-    "company": "Another Company",
+    "company": "Concordia University",
     "period": {
-      "start": "2022-01",
-      "end": "2022-12"
+      "start": "2023-01",
+      "end": "2025-04"
     },
     "technologies": [
-      "Angular",
       "Node.js",
-      "Express",
-      "PostgreSQL"
+      "Python",
+      "Fiddler",
+      "IoT",
+      "nRF52840"
     ],
     "description": {
-      "en": "Worked on frontend and backend features.",
-      "fr": "Travail sur des fonctionnalités frontend et backend."
+      "en": "Built a smart-home IoT testbed with Node.js, captured and parsed device traffic using Python and Fiddler, parallelized graph-based model generation, and improved verification time and runtime efficiency significantly.",
+      "fr": "Création d’un banc d’essai IoT pour maison intelligente avec Node.js, capture et analyse du trafic avec Python et Fiddler, parallélisation de la génération de modèles graphiques et amélioration significative du temps de vérification et des performances."
+    }
+  },
+  {
+    "id": "experience-3",
+    "role": {
+      "en": "Software Developer",
+      "fr": "Développeur logiciel"
+    },
+    "company": "Institute of Applied Systems of University of Tehran (IAIS)",
+    "period": {
+      "start": "2019-04",
+      "end": "2020-11"
+    },
+    "technologies": [
+      "Java",
+      "Kotlin",
+      "Spring Boot",
+      "Hibernate",
+      "PostgreSQL",
+      "JWT",
+      "RBAC",
+      "JUnit",
+      "Postman",
+      "Swagger"
+    ],
+    "description": {
+      "en": "Migrated Java services to Kotlin, built REST APIs with Spring Boot and Hibernate, developed a Telegram bot with webhook support, and validated APIs while designing PostgreSQL-backed data models.",
+      "fr": "Migration de services Java vers Kotlin, développement d’API REST avec Spring Boot et Hibernate, création d’un bot Telegram avec webhook et validation des API avec conception de modèles de données PostgreSQL."
     }
   }
 ]

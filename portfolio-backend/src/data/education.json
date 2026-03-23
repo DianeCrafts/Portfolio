@@ -1,45 +1,50 @@
 [
   {
-    "id": "education-1",
-    "degree": {
-      "en": "Bachelor of Computer Science",
-      "fr": "Baccalauréat en informatique"
-    },
-    "school": "University Name",
-    "period": {
-      "start": "2020-09",
-      "end": "2024-06"
-    },
-    "description": {
-      "en": "Focused on software development, algorithms, backend systems, and web technologies.",
-      "fr": "Axé sur le développement logiciel, les algorithmes, les systèmes backend et les technologies web."
-    },
-    "courses": [
-      "Algorithms",
-      "Databases",
-      "Web Development",
-      "Operating Systems"
-    ]
+  "id": "education-1",
+  "degree": {
+    "en": "Bachelor of Computer Engineering",
+    "fr": "Licence en génie informatique"
   },
+  "school": "Amirkabir University of Technology (Tehran Polytechnic)",
+  "period": {
+    "start": "2017-08",
+    "end": "2021-12"
+  },
+  "description": {
+    "en": "Completed a Bachelor's degree in Computer Engineering at Amirkabir University of Technology, ranked among the top 3 universities in Iran (QS ranking). Graduated with a GPA of 17.01/20. Ranked 221 among over 150,000 candidates in the national university entrance exam and selected among the top 10% of admitted students as a distinguished student.",
+    "fr": "Licence en génie informatique à l’Université de Technologie d’Amirkabir, classée parmi les 3 meilleures universités en Iran (classement QS). Moyenne générale de 17.01/20. Classée 221e parmi plus de 150 000 candidats à l’examen national d’entrée et sélectionnée parmi les 10% meilleurs étudiants admis."
+  },
+  "courses": [
+    "Advanced Programming (Java)",
+    "Algorithms and Data Structures",
+    "Databases",
+    "Computer Networks",
+    "Web Development",
+    "Software Engineering",
+    "Software Testing",
+    "Cloud Computing"
+  ]
+},
   {
-    "id": "education-2",
-    "degree": {
-      "en": "Relevant Coursework",
-      "fr": "Cours pertinents"
-    },
-    "school": "Academic Projects",
-    "period": {
-      "start": "2021-01",
-      "end": "2023-12"
-    },
-    "description": {
-      "en": "Completed projects in full-stack development, networking, and software engineering.",
-      "fr": "Réalisation de projets en développement full-stack, réseautique et ingénierie logicielle."
-    },
-    "courses": [
-      "Networking",
-      "Software Engineering",
-      "Cloud Fundamentals"
-    ]
-  }
+  "id": "education-2",
+  "degree": {
+    "en": "Master of Information Systems Security",
+    "fr": "Maîtrise en sécurité des systèmes d'information"
+  },
+  "school": "Concordia University",
+  "period": {
+    "start": "2023-01",
+    "end": "2025-04"
+  },
+  "description": {
+    "en": "Completed a thesis-based Master’s degree in Information Systems Security with a GPA of 3.98/4.3. Specialized in cryptography, system security, and network security through advanced coursework and research-focused studies.",
+    "fr": "Maîtrise en sécurité des systèmes d'information avec mémoire, moyenne de 3.98/4.3. Spécialisation en cryptographie, sécurité des systèmes et sécurité réseau à travers des cours avancés et un travail de recherche."
+  },
+  "courses": [
+    "Fundamentals of Cryptography",
+    "Cryptographic Protocols & Network Security",
+    "Operating Systems Security",
+    "Security of Smart Homes"
+  ]
+}
 ]
