@@ -4,13 +4,13 @@ services:
     container_name: portfolio-backend
     env_file:
       - ./portfolio-backend/.env.production
-    expose:
-      - "3000"
+    ports:
+      - "127.0.0.1:3000:3000"
 
   frontend:
     build: ./portfolio-frontend
     container_name: portfolio-frontend
     ports:
-      - "80:80"
+      - "127.0.0.1:8080:80"
     depends_on:
       - backend
