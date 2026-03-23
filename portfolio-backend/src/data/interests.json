@@ -2,8 +2,8 @@
   {
     "id": "interest-1",
     "name": {
-      "en": "Backend Architecture",
-      "fr": "Architecture Backend"
+      "en": "Full-stack web development",
+      "fr": "Développement web full-stack"
     }
   },
   {
@@ -14,10 +14,10 @@
     }
   },
   {
-  "id": "interest-3",
-  "name": {
-    "en": "System Design",
-    "fr": "Conception de Systèmes"
+    "id": "interest-3",
+    "name": {
+      "en": "Cybersecurity",
+      "fr": "Cybersécurité"
+    }
   }
-}
 ]
