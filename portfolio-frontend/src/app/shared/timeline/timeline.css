@@ -183,3 +183,33 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 768px) {
+
+  .timeline-line {
+    display: none;
+  }
+
+  .timeline-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    justify-content: center;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
+}
