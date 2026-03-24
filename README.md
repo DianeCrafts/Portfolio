@@ -1,10 +1,13 @@
-# 🌐 Full-Stack Portfolio (Angular + Node.js)
+# Full-Stack Portfolio (Angular + Node.js)
 
 A modern, full-stack portfolio application built with Angular and Node.js, featuring dynamic content, internationalization, performance optimization, and responsive UI.
 
+## 🌍 Live Demo
+https://mahdiehgh.com
+
 ---
 
-## 🚀 Features
+## Features
 
 -  Multi-language support (English / French)
 -  Light / Dark mode toggle
@@ -16,7 +19,7 @@ A modern, full-stack portfolio application built with Angular and Node.js, featu
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - Angular 17+
@@ -32,30 +35,68 @@ A modern, full-stack portfolio application built with Angular and Node.js, featu
 - Autocannon (performance testing)
 - Nodemon (development)
 
+### DevOps
+- Docker
+- GitHub Actions
+- AWS EC2
+- Nginx
+- Cloudflare
 ---
+
+## DevOps & Deployment
+
+- Containerized frontend and backend using Docker
+- Multi-container setup with Docker Compose
+- Configured environment-based deployment (development vs production)
+- Implemented CI/CD pipeline using GitHub Actions
+- Automated deployment to AWS EC2 via SSH
+- Configured Nginx as reverse proxy for API and frontend routing
+- Enabled HTTPS with Let's Encrypt (Certbot)
+- Integrated Cloudflare for DNS management and security
 
 ## 📂 Project Structure
 ```bash
 portfolio/
+├── .github/
+│   └── workflows/
+│       ├── ci.yml
+│       └── deploy.yml
+│
+├── docker-compose.yml
+├── docker-compose.prod.yml
+│
 ├── portfolio-backend/
-│ ├── src/
-│ │ ├── controllers/
-│ │ ├── services/
-│ │ ├── repositories/
-│ │ ├── routes/
-│ │ └── data/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── .env.development
+│   ├── .env.production
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── services/
+│   │   ├── repositories/
+│   │   ├── routes/
+│   │   ├── data/
+│   │   ├── app.js
+│   │   └── server.js
 │
 ├── portfolio-frontend/
-│ ├── src/app/
-│ │ ├── core/
-│ │ ├── features/
-│ │ ├── shared/
-│ │ └── assets/
-│ └── public/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── nginx.conf
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── core/
+│   │   │   ├── features/
+│   │   │   ├── shared/
+│   │   │   └── assets/
+│   │   ├── environments/
+│   │   ├── favicon.ico
+│   │   └── index.html
+│   └── public/
 ```
 
 
-### 🌍 Internationalization & Theming
+### Internationalization & Theming
 
 Implemented dynamic language switching and theme control across the entire application.
 
@@ -65,12 +106,12 @@ Implemented dynamic language switching and theme control across the entire appli
 - Automatic re-fetch of data when language changes
 - UI text translated using centralized configuration
 
-#### 🎨 Theme Switching (Light / Dark)
+####  Theme Switching (Light / Dark)
 - Implemented using CSS variables and `data-theme`
 - Instant theme switching without page reload
 - Consistent design across all components
 
-### 🧩 Frontend Architecture
+###  Frontend Architecture
 
 Built using Angular standalone components with a modular structure.
 
@@ -81,10 +122,6 @@ Built using Angular standalone components with a modular structure.
   - Language state
   - Theme management
 
-#### 💡 Result
-- Scalable and maintainable frontend
-- Clear separation of concerns
-- Easy feature expansion
 
 ---
 
@@ -103,6 +140,26 @@ cd portfolio-frontend
 npm install
 ng serve
 ```
+
+### Run with Docker (Recommended)
+
+```bash
+docker-compose up --build
+```
+
+Production (EC2)
+```bash
+docker-compose -f docker-compose.prod.yml up --build -d
+```
+
+
+## 🤖 CI/CD Pipeline
+
+- Continuous Integration runs on every push and pull request
+- Builds and validates both frontend and backend
+- Manual deployment trigger using GitHub Actions
+- Secure SSH-based deployment to AWS EC2
+- Zero-downtime container restart using Docker Compose
 
 ## 🔗 API Endpoints
 - /api/projects
@@ -189,7 +246,7 @@ Asynchronous results:
 - **Load:** 100 concurrent connections  
 - **Duration:** 10 seconds  
 
-#### 💡 Impact
+####  Impact
 - Improved scalability under high concurrency  
 - Prevented event loop blocking (critical in Node.js applications)  
 - Achieved more stable and predictable response times  
