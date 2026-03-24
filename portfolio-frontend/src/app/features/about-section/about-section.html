@@ -15,8 +15,12 @@
 
       <div class="contact-grid">
         <a class="contact-item" [href]="'mailto:' + about.email">
-          <span class="contact-item-title">{{ text[currentLanguage].contact.email }}</span>
-          <span class="contact-item-value">{{ about.email }}</span>
+          <span class="contact-item-title">
+            {{ text[currentLanguage].contact.email }}
+          </span>
+          <span class="contact-item-value">
+            {{ about.email }}
+          </span>
         </a>
 
         <a
@@ -25,8 +29,12 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="contact-item-title">{{ text[currentLanguage].contact.github }}</span>
-          <span class="contact-item-value">{{ about.github }}</span>
+          <span class="contact-item-title">
+            {{ text[currentLanguage].contact.github }}
+          </span>
+          <span class="contact-item-value">
+            {{ about.github.replace('https://', '').replace('http://', '') }}
+          </span>
         </a>
 
         <a
@@ -35,8 +43,12 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span class="contact-item-title">{{ text[currentLanguage].contact.linkedin }}</span>
-          <span class="contact-item-value">{{ about.linkedin }}</span>
+          <span class="contact-item-title">
+            {{ text[currentLanguage].contact.linkedin }}
+          </span>
+          <span class="contact-item-value">
+            {{ about.linkedin.replace('https://www.', '').replace('http://', '') }}
+          </span>
         </a>
       </div>
     </div>
