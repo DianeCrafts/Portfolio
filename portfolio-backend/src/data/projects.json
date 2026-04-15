@@ -1,5 +1,26 @@
 [
-    {
+  {
+    "id": "project-threatlens",
+    "title": {
+      "en": "ThreatLens: Intrusion Detection System",
+      "fr": "ThreatLens : Système de Détection d'Intrusion"
+    },
+    "description": {
+      "en": "Developed a Python-based intrusion detection system using log analysis and network telemetry (Scapy) to detect brute-force attacks, Nmap port scans, and anomalous traffic. Simulated adversarial traffic using Nmap and custom scripts to improve detection accuracy for port scans, high-rate connections, and HTTP flooding. Built a Streamlit-based dashboard to visualize alerts, anomalies, and high-risk IPs, enhancing threat visibility and response.",
+      "fr": "Développé un système de détection d’intrusion en Python basé sur l’analyse de logs et du trafic réseau (Scapy) pour détecter les attaques par force brute, les scans de ports Nmap et les anomalies. Simulation de trafic malveillant avec Nmap et des scripts personnalisés pour améliorer la précision de détection. Création d’un tableau de bord avec Streamlit pour visualiser les alertes, anomalies et adresses IP à haut risque."
+    },
+    "technologies": [
+      "Python",
+      "Scapy",
+      "Nmap",
+      "Streamlit",
+      "Network Security",
+      "Intrusion Detection",
+      "Log Analysis"
+    ],
+    "githubUrl": "https://github.com/DianeCrafts/ThreatLens"
+  },  
+  {
     "id": "project-portfolio",
     "title": {
       "en": "Full-Stack Portfolio Platform",

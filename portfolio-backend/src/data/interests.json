@@ -9,15 +9,16 @@
   {
     "id": "interest-2",
     "name": {
-      "en": "Cloud Computing",
-      "fr": "Cloud Computing"
+      "en": "Cybersecurity",
+      "fr": "Cybersécurité"
     }
   },
   {
     "id": "interest-3",
     "name": {
-      "en": "Cybersecurity",
-      "fr": "Cybersécurité"
+      "en": "Cloud Computing",
+      "fr": "Cloud Computing"
     }
   }
+  
 ]

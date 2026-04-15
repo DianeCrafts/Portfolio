@@ -12,7 +12,7 @@ export const UI_TEXT = {
     },
     home: {
       greeting: 'Hi, my name is',
-      subtitle: 'Full-stack Developer passionate about building clean, scalable, and modern applications.',
+      subtitle: 'Software engineer specializing in application development and cybersecurity, focused on building clean, scalable, and secure systems.',
       scroll: 'SCROLL'
     },
     experience: {
